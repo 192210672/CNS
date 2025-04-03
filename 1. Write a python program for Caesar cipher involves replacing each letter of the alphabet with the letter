@@ -1,0 +1,4 @@
+def caesar_cipher(text, k):
+    return ''.join(chr((ord(c) - ord('a') + k) % 26 + ord('a')) if c.isalpha() else c for c in text.lower())
+
+print(caesar_cipher("hello", 3))  # Example usage
