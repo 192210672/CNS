@@ -1,0 +1,4 @@
+def mono_freq_attack(ciphertext, top_n=10):
+    print("Performing frequency attack...")  # Would require bigram/trigram analysis
+
+mono_freq_attack("substitutionciphertext")
