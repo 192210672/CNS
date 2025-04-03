@@ -1,0 +1,4 @@
+def affine_caesar(text, a, b):
+    return ''.join(chr(((a * (ord(c) - ord('a')) + b) % 26) + ord('a')) for c in text)
+
+print(affine_caesar("hello", 5, 8))
