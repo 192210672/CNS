@@ -1,0 +1,4 @@
+def cbc_mac_attack():
+    print("CBC-MAC is vulnerable to message extension attacks!")
+
+cbc_mac_attack()
