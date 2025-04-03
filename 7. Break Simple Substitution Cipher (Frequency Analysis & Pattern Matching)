@@ -1,0 +1,15 @@
+from collections import Counter
+
+ciphertext = "53‡‡†305))6*;4826)4‡.)4‡);806*;48†8¶60))85;;]8*;:..."
+
+freq = Counter(ciphertext)  # Count character occurrences
+sorted_chars = [char for char, _ in freq.most_common()]
+
+e_guess = sorted_chars[0]  # Most common character
+print(f"Possible 'e': {e_guess}")
+
+# Manually replacing known patterns like 'the'
+mapping = {e_guess: 'e'}  # Expand this by matching patterns
+
+decrypted_text = ''.join(mapping.get(c, c) for c in ciphertext)
+print(decrypted_text)  # Further analysis needed for full decryption
