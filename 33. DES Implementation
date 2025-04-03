@@ -1,0 +1,7 @@
+from Crypto.Cipher import DES
+
+key = b'8bytekey'
+data = b"plaintext"
+cipher = DES.new(key, DES.MODE_ECB)
+encrypted = cipher.encrypt(data.ljust(8))
+print("DES Encrypted:", encrypted.hex())
