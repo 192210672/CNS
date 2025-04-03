@@ -1,0 +1,9 @@
+from math import log2, factorial
+
+# Total keys ignoring duplicates
+total_keys = factorial(25)  # 25 letters (J is merged with I)
+print(f"Total keys (ignoring duplicates): 2^{log2(total_keys):.2f}")
+
+# Considering identical encryption results
+unique_keys = total_keys // (2 * 5 * 5)  # Accounts for equivalent keys
+print(f"Unique keys: 2^{log2(unique_keys):.2f}")
