@@ -1,0 +1,5 @@
+def vigenere_cipher(text, key):
+    key = (key * (len(text) // len(key) + 1))[:len(text)]
+    return ''.join(chr((ord(c) - ord('a') + ord(k) - ord('a')) % 26 + ord('a')) if c.isalpha() else c for c, k in zip(text.lower(), key.lower()))
+
+print(vigenere_cipher("hello", "key"))  # Example usage
