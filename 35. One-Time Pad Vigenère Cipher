@@ -1,0 +1,9 @@
+import random
+
+def one_time_pad_vigenere(text):
+    key = [random.randint(0, 25) for _ in text]
+    encrypted = ''.join(chr((ord(c) - ord('a') + k) % 26 + ord('a')) for c, k in zip(text, key))
+    return encrypted, key
+
+ciphertext, key = one_time_pad_vigenere("sendmoremoney")
+print("Ciphertext:", ciphertext)
