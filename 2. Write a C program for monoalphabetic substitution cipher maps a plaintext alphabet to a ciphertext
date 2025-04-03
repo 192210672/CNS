@@ -1,0 +1,9 @@
+import random
+
+def monoalphabetic_cipher(text, key=None):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    key = key or ''.join(random.sample(alphabet, len(alphabet)))
+    return ''.join(key[alphabet.index(c)] if c in alphabet else c for c in text.lower()), key
+
+cipher_text, key = monoalphabetic_cipher("hello")
+print(cipher_text, key)  # Example usage
