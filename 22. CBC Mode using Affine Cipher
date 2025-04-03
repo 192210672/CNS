@@ -1,0 +1,6 @@
+def affine_encrypt(text, a, b):
+    return ''.join(chr(((a * (ord(c) - ord('A')) + b) % 26) + ord('A')) for c in text)
+
+plaintext = "HELLO"
+ciphertext = affine_encrypt(plaintext, 5, 8)
+print("Affine CBC Ciphertext:", ciphertext)
