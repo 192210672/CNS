@@ -1,0 +1,10 @@
+from collections import Counter
+
+def frequency_attack(ciphertext, top_n=10):
+    freq = Counter(ciphertext)
+    sorted_freq = sorted(freq.items(), key=lambda x: -x[1])
+
+    for shift in range(top_n):
+        print(f"Shift {shift}: {''.join(chr((ord(c) - shift - ord('a')) % 26 + ord('a')) for c in ciphertext)}")
+
+frequency_attack("encryptedtext")
