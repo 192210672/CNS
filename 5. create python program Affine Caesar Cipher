@@ -1,0 +1,8 @@
+from math import gcd
+
+def affine_cipher(text, a, b):
+    if gcd(a, 26) != 1:
+        return "Invalid 'a'"
+    return ''.join(chr((a * (ord(c) - ord('a')) + b) % 26 + ord('a')) if c.isalpha() else c for c in text.lower())
+
+print(affine_cipher("hello", 5, 8))  # Example usage
