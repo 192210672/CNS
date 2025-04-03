@@ -1,0 +1,6 @@
+def hill_attack(plaintext, ciphertext):
+    print("Solving using known plaintext attack...")
+    # Requires solving linear equations modulo 26, omitted for brevity
+    return
+
+hill_attack("knowntext", "ciphertext")
