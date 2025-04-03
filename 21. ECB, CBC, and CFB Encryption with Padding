@@ -1,0 +1,14 @@
+from Crypto.Cipher import AES
+import os
+
+def pad(data):
+    padding_len = AES.block_size - (len(data) % AES.block_size)
+    return data + bytes([1] + [0] * (padding_len - 1))
+
+key = os.urandom(16)
+iv = os.urandom(16)
+plaintext = b"HelloCryptography"
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+ciphertext = cipher.encrypt(pad(plaintext))
+print("CBC Encrypted:", ciphertext.hex())
