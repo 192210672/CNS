@@ -1,0 +1,6 @@
+def otp_vigenere(text, key):
+    return ''.join(chr((ord(c) - ord('a') + k) % 26 + ord('a')) for c, k in zip(text, key))
+
+key_stream = [9, 0, 1, 7, 23, 15, 21, 14, 11, 11, 2, 8, 9]
+cipher_text = otp_vigenere("sendmoremoney", key_stream)
+print(cipher_text)
