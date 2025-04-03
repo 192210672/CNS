@@ -1,0 +1,4 @@
+def error_propagation():
+    print("Error in C1 affects P1 and P2, but not beyond P2.")
+
+error_propagation()
