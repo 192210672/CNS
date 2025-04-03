@@ -1,0 +1,16 @@
+import numpy as np
+
+def hill_encrypt(text, key):
+    text = text.replace(" ", "").lower()
+    text += 'x' * (len(text) % 2)  # Padding
+    key_matrix = np.array([[9, 4], [5, 7]])
+    encrypted = ""
+    
+    for i in range(0, len(text), 2):
+        pair = np.array([[ord(text[i]) - ord('a')], [ord(text[i+1]) - ord('a')]])
+        result = (key_matrix @ pair) % 26
+        encrypted += chr(result[0, 0] + ord('a')) + chr(result[1, 0] + ord('a'))
+    
+    return encrypted
+
+print(hill_encrypt("meet me at the usual place at ten rather than eight oclock", [[9, 4], [5, 7]]))
