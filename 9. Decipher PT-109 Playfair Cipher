@@ -1,0 +1,5 @@
+def decrypt_playfair(ciphertext, key):
+    matrix = create_matrix(key)  # Using Playfair function from problem 3
+    return playfair_cipher(ciphertext.replace(" ", "").lower(), key)  # Use decryption logic
+
+print(decrypt_playfair("KXJEY UREBE ZWEHE WRYTU", "PT109"))  # Example
