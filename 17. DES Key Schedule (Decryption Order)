@@ -1,0 +1,4 @@
+def des_decryption_keys(keys):
+    return keys[::-1]  # Reverse order for decryption
+
+print(des_decryption_keys(["K1", "K2", "K3", ..., "K16"]))  # Example
