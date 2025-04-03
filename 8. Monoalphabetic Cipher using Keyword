@@ -1,0 +1,10 @@
+def generate_cipher(key):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    key_unique = "".join(dict.fromkeys(key + alphabet))  # Remove duplicates
+    return {p: c for p, c in zip(alphabet, key_unique)}
+
+def monoalphabetic_cipher(text, key):
+    cipher_map = generate_cipher(key)
+    return ''.join(cipher_map.get(c, c) for c in text.lower())
+
+print(monoalphabetic_cipher("hello", "CIPHER"))  # Example usage
