@@ -1,0 +1,8 @@
+def diffie_hellman(p, g, a, b):
+    A = (g ** a) % p
+    B = (g ** b) % p
+    shared_key = (B ** a) % p  # Same as (A ** b) % p
+    return shared_key
+
+p, g, a, b = 23, 5, 6, 15
+print("Shared Key:", diffie_hellman(p, g, a, b))
